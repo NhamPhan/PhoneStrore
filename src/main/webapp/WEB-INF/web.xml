@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <filter>
+        <filter-name>authentication</filter-name>
+        <filter-class>com.phonestore.filter.AuthenticationFilter</filter-class>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>authentication</filter-name>
+
+        <url-pattern>/bill/checkout</url-pattern>
+        <url-pattern>/bill/history</url-pattern>
+        <url-pattern>/cart/create</url-pattern>
+        <url-pattern>/cart/update</url-pattern>
+        <url-pattern>/cart</url-pattern>
+        <url-pattern>/cart/remove</url-pattern>
+        <url-pattern>/user/update</url-pattern>
+
+        <url-pattern>/admin/product/create</url-pattern>
+        <url-pattern>/admin/product/update</url-pattern>
+        <url-pattern>/admin/product</url-pattern>
+        <url-pattern>/admin/product/remove</url-pattern>
+        <url-pattern>/admin/discount/create</url-pattern>
+        <url-pattern>/admin/discount/cancel</url-pattern>
+        <url-pattern>/admin/discount</url-pattern>
+        <url-pattern>/admin/home</url-pattern>
+        <url-pattern>/admin/category</url-pattern>
+        <url-pattern>/admin/category/create</url-pattern>
+        <url-pattern>/admin/category/update</url-pattern>
+        <url-pattern>/admin/user</url-pattern>
+        <url-pattern>/admin/user/lock</url-pattern>
+        <url-pattern>/admin/user/unlock</url-pattern>
+        <url-pattern>/admin/statistic</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>authorization</filter-name>
+        <filter-class>com.phonestore.filter.AuthorizationFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>authorization</filter-name>
+
+        <url-pattern>/bill/checkout</url-pattern>
+        <url-pattern>/bill/history</url-pattern>
+        <url-pattern>/cart/create</url-pattern>
+        <url-pattern>/cart/update</url-pattern>
+        <url-pattern>/cart</url-pattern>
+        <url-pattern>/cart/remove</url-pattern>
+        <url-pattern>/user/update</url-pattern>
+
+        <url-pattern>/admin/product/create</url-pattern>
+        <url-pattern>/admin/product/update</url-pattern>
+        <url-pattern>/admin/product</url-pattern>
+        <url-pattern>/admin/product/remove</url-pattern>
+        <url-pattern>/admin/discount/create</url-pattern>
+        <url-pattern>/admin/discount/cancel</url-pattern>
+        <url-pattern>/admin/discount</url-pattern>
+        <url-pattern>/admin/home</url-pattern>
+        <url-pattern>/admin/category</url-pattern>
+        <url-pattern>/admin/category/create</url-pattern>
+        <url-pattern>/admin/category/update</url-pattern>
+        <url-pattern>/admin/user</url-pattern>
+        <url-pattern>/admin/user/lock</url-pattern>
+        <url-pattern>/admin/user/unlock</url-pattern>
+        <url-pattern>/admin/statistic</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>charset</filter-name>
+        <filter-class>com.phonestore.filter.CharsetFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>charset</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <error-page>
+        <location>/view/404.jsp</location>
+        <error-code>404</error-code>
+    </error-page>
+
+    <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.js</url-pattern>
+            <page-encoding>UTF-8</page-encoding>
+        </jsp-property-group>
+    </jsp-config>
+
+<!--  <resource-ref>-->
+<!--    <res-ref-name>DATASOURCE</res-ref-name>-->
+<!--    <res-type>javax.sql.DataSource</res-type>-->
+<!--    <res-auth>Container</res-auth>-->
+<!--    <res-sharing-scope>Shareable</res-sharing-scope>-->
+<!--  </resource-ref>-->
+</web-app>
